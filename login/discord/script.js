@@ -161,7 +161,7 @@ window.onload = async function () {
   if (!fragment.get('access_token') && !fragment.get('logout')) {
     addText("Redirigiendo a Discord")
     await sleep(1500)
-    window.location = 'https://discord.com/api/oauth2/authorize?client_id=1122989140594655282&redirect_uri=https%3A%2F%2Fgacarblaportfolio.netlify.app%2Flogin%2Fdiscord%2F&response_type=code&scope=guilds%20identify%20email'
+    window.location = 'https://discord.com/api/oauth2/authorize?client_id=1122989140594655282&redirect_uri=https%3A%2F%2Fgacarblaportfolio.netlify.app%2Flogin%2Fdiscord%2F&response_type=token&scope=guilds%20identify%20email'
   } else {
     try {
       await myIndexedDB.startDB("user")
