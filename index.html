@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!--  Etiquetas meta  -->
+  <meta charset="UTF-8">
+
+  <!--  SEO meta  -->
+  <meta property="og:type" content="website">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="gacarbla's portfolio">
+  <meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <link rel="icon" type="image/x-icon" href="/src/images/png/logo.png">
+
+  <!--  Ajustes meta  -->
+  <meta property="og:locale" content="es-ES">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--  Hojas de estilo  -->
+  <link rel="stylesheet" href="style.css">
+
+  <!--  Scripts  -->
+  <script src="script.js"></script>
+  <script src="src/indexeddb/script.js"></script>
+  <script src="src/discord/script.js"></script>
+  <script src="https://cdn.lordicon.com/bhenfmcm.js"></script> <!-- Inicia sesión avatar -->
+
+  <!--  Título  -->
+  <title>gacarbla's portfolio</title>
+
+</head>
+
+<body id="body" class="dark">
+<header>
+  <div class="openHam" onclick="document.querySelector('nav').classList.add('active')">
+    <svg viewBox="0 0 24 24">
+      <path d="M4.5 21V9L2 11l10-8 10 8-2.5-2v12h-15Z"></path>
+      <path d="M9.5 14.5V21h5v-6.5h-5Z"></path>
+      <path d="M4.5 21h15"></path>
+    </svg>
+  </div>
+  <div class="navigation">
+    <nav>
+      <ul>
+        <!--
+        <li>
+          Proyectos
+          <ul>
+            <li linked="https://github.com/gacarbla/Dori" newtab="true">Dori (19-20)</li>
+            <li linked="https://github.com/OverSyntax/oversyntax.github.io" newtab="true">OverSyntax (21-22)</li>
+          </ul>
+        </li>
+        -->
+        <li>
+          Redes sociales
+          <ul>
+            <li linked="https://www.linkedin.com/in/gabriel-carro-blanco/" newtab="true">LinkedIn</li>
+            <li linked="https://github.com/gacarbla" newtab="true">GitHub</li>
+            <li linked="https://discord.com/users/643575943289634836" newtab="true">Discord</li>
+            <li linked="https://instagram.com/gacarbla" newtab="true">Instagram</li>
+          </ul>
+        </li>
+        <!--
+
+          PRÓXIMAMENTE
+
+        <li>
+          Esta página
+          <ul>
+            <li linked="" newtab="false">Base</li>
+            <li linked="" newtab="false">discord login</li>
+            <li linked="" newtab="false">IndexedDB</li>
+            <li linked="" newtab="false">Loader</li>
+            <li linked="" newtab="false">Subpáginas</li>
+          </ul>
+        </li>
+        -->
+      </ul>
+    </nav>
+  </div>
+  <div class="profile">
+    <button class="default discord" onclick="window.location = '/login'" style="visibility: visible;">
+      <div class="image">
+        <lord-icon src="https://cdn.lordicon.com/bhfjfgqz.json" class="icon" trigger="loop" delay="3000"
+          colors="primary:#121331" style="width:40px;height:40px"></lord-icon>
+      </div>
+      <div class="username">
+        <p>Inicia sesión</p>
+      </div>
+    </button>
+    <button class="specific discord" style="visibility: hidden;" onclick="window.location = '/login/discord/#logout=true'">
+      <div class="image">
+        <img id="user_img">
+      </div>
+      <div class="username">
+        <p><span id="user_username"></span><span id="user_discriminator"></span></p>
+      </div>
+    </button>
+  </div>
+</header>
+<div class="start">
+  <canvas id="canvas"></canvas>
+</div>
+<div class="content">
+
+  <h1>¡Hola!<br>Me llamo Gabriel</h1>
+
+  <div class="space"></div>
+  <h3>Experiencia</h3>
+  <div class="card">
+    <div class="tools">
+      <div class="circle">
+        <span class="red box"></span>
+      </div>
+      <div class="circle">
+        <span class="yellow box"></span>
+      </div>
+      <div class="circle">
+        <span class="green box"></span>
+      </div>
+      <p>Java Script</p>
+    </div>
+    <div class="card__content">
+      <p>
+        <span class="db">const</span> <span class="b">myIndexedDB</span> = <span class="ocr">{</span><br>
+        &ensp;<span class="lb">db:</span> <span class="db">undefined</span>,<br>
+        &ensp;<span class="y">startDB</span><span class="m">() {</span><br>
+        &ensp;&ensp;<span class="m">return</span> <span class="db">new</span> <span class="g">Promise</span><span class="b">(</span><span class="db">async</span> <span class="y">resolve</span> <span class="db">=></span> <span class="ocr">{</span><br>
+        &ensp;&ensp;&ensp;<span class="db">let</span> <span class="lb">request</span> = <span class="lb">window</span>.<span class="lb">indexedDB</span>.<span class="y">open</span><span class="m">(</span><span class="ma">"user"</span>, 1<span class="m">)</span>;<br>
+        &ensp;&ensp;&ensp;<span class="lb">request</span>.<span class="y">onerror</span> = <span class="db">function</span> <span class="m">() {</span><br>
+        &ensp;&ensp;&ensp;&ensp;<span class="lb">console</span>.<span class="y">error</span><span class="db">(</span><span class="ma">"No se pudo abrir la base de datos"</span><span class="db">)</span>;<br>
+        &ensp;&ensp;&ensp;<span class="m">}</span>;<br>
+        &ensp;&ensp;&ensp;<span class="lb">request</span>.<span class="y">onsuccess</span> = <span class="db">function</span> <span class="m">() {</span><br>
+        &ensp;&ensp;&ensp;&ensp;<span class="lb">console</span>.<span class="y">info</span><span class="db">(</span><span class="ma">"Base de datos abierta con éxito"</span><span class="db">)</span>;<br>
+        &ensp;&ensp;&ensp;&ensp;<span class="b">myIndexedDB</span>.<span class="lb">db</span> = <span class="lb">request</span>.<span class="b">result</span>;<br>
+        &ensp;&ensp;&ensp;&ensp;<span class="y">resolve</span><span class="db">()</span><br>
+        <br>
+        <span class="acct">[...] 100 líneas restantes</span>
+      </p>
+    </div>
+  </div>
+  <p>Autodidacta desde 2018.<br>Programando en JavaScript, TypeScript y Python. Haciendo uso de Node.js.<br>Diseñando páginas en HTML y CSS.</p>
+  <p>
+    Catto Coffee ( <a href="http://catto.gatitosworld.com" target="_blank">catto.gatitosworld.com</a> )<br>
+    Bot de Discord con más de 300 000 usuarios y presente en más de 300 servidores. Programado íntegramente en TypeScript transpilado.<br>
+    El proyecto se llevó a cabo en colaboración con <a href="https://github.com/1rainwall" target="_blank">Rain</a> y <a href="https://github.com/mateoltd" target="_blank">Mathéo</a>.
+  </p>
+  <div class="space"></div>
+  <h3>Metas</h3>
+  <p>
+    Romper con lo habitual, lograr la superación personal y contribuír en proyectos mayores me mueven a la mejoría constante de mis habilidades.
+  </p>
+</div>
+
+</body>
+
+</html>

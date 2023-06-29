@@ -1,0 +1,116 @@
+@import url('https://fonts.cdnfonts.com/css/whitney-2');
+
+* {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -moz-window-dragging: none;
+    animation: fade .5s
+}
+
+body {
+    background-color: #ddd;
+    font-family: whitney;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #5865f2;
+    width: 400px;
+    border-radius: 5px;
+    position: absolute;
+    top: calc(50vh - 33px);
+    left: calc(50vw - 200px);
+    cursor: pointer;
+    padding: 15px 0px;
+}
+
+.text {
+    color: #fff;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+.text p {
+    margin: 0px;
+    white-space: nowrap;
+}
+
+.discord {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.discord svg {
+    fill: #fff;
+    height: 30px;
+    width: 30px;
+}
+
+.cancel {
+    position: absolute;
+    top: calc(50vh + 50px);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cancel p {
+    text-align: center;
+    color: #000;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.cancel p:hover {
+    color: #333;
+}
+
+.collapsed {
+    width: 0px;
+    margin: 0px;
+    padding: 0px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.start {
+    animation: biglogo 5s ease;
+}
+
+@keyframes biglogo {
+    0% {
+        transform: scale(1);
+        z-index: 999;
+        fill: #fff;
+    }
+    50% {
+        fill: #ddd;
+    }
+    100% {
+        transform: scale(300) rotateZ(30deg);
+        z-index: 999;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
