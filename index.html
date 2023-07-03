@@ -33,126 +33,254 @@
 </head>
 
 <body id="body" class="dark">
-<header>
-  <div class="openHam" onclick="document.querySelector('nav').classList.add('active')">
-    <svg viewBox="0 0 24 24">
-      <path d="M4.5 21V9L2 11l10-8 10 8-2.5-2v12h-15Z"></path>
-      <path d="M9.5 14.5V21h5v-6.5h-5Z"></path>
-      <path d="M4.5 21h15"></path>
-    </svg>
-  </div>
-  <div class="navigation">
-    <nav>
-      <ul>
-        <!--
-        <li>
-          Proyectos
-          <ul>
-            <li linked="https://github.com/gacarbla/Dori" newtab="true">Dori (19-20)</li>
-            <li linked="https://github.com/OverSyntax/oversyntax.github.io" newtab="true">OverSyntax (21-22)</li>
-          </ul>
-        </li>
-        -->
-        <li>
-          Redes sociales
-          <ul>
-            <li linked="https://www.linkedin.com/in/gabriel-carro-blanco/" newtab="true">LinkedIn</li>
-            <li linked="https://github.com/gacarbla" newtab="true">GitHub</li>
-            <li linked="https://discord.com/users/643575943289634836" newtab="true">Discord</li>
-            <li linked="https://instagram.com/gacarbla" newtab="true">Instagram</li>
-          </ul>
-        </li>
-        <!--
 
-          PRÓXIMAMENTE
+  <!-- Elimina esto de aquí abajo si quieres desactivar la ventana que bloquea el acceso a la página si tu navegador no permite el uso de scripts -->
 
-        <li>
-          Esta página
-          <ul>
-            <li linked="" newtab="false">Base</li>
-            <li linked="" newtab="false">discord login</li>
-            <li linked="" newtab="false">IndexedDB</li>
-            <li linked="" newtab="false">Loader</li>
-            <li linked="" newtab="false">Subpáginas</li>
-          </ul>
-        </li>
-        -->
-      </ul>
-    </nav>
-  </div>
-  <div class="profile">
-    <button class="default discord" onclick="window.location = '/login'" style="visibility: visible;">
-      <div class="image">
-        <lord-icon src="https://cdn.lordicon.com/bhfjfgqz.json" class="icon" trigger="loop" delay="3000"
-          colors="primary:#121331" style="width:40px;height:40px"></lord-icon>
+  <noscript class="noscript">
+    <div>
+      <div class="title">
+        Tu navegador no permite el uso de scripts.
       </div>
-      <div class="username">
-        <p>Inicia sesión</p>
+      <div class="body">
+        Muchas de las funciones de la página no estarán disponibles, entre ellas, se encuentran la mayor parte de links, el login y las animaciones.
       </div>
-    </button>
-    <button class="specific discord" style="visibility: hidden;" onclick="window.location = '/login/discord/#logout=true'">
-      <div class="image">
-        <img id="user_img">
+      <div id="cooldown">
+        Esta ventana evitará que hagas uso de las herramientas de la página.<br>Si deseas, puedes desactivarla mediante el inspector de código.
       </div>
-      <div class="username">
-        <p><span id="user_username"></span><span id="user_discriminator"></span></p>
-      </div>
-    </button>
-  </div>
-</header>
-<div class="start">
-  <canvas id="canvas"></canvas>
-</div>
-<div class="content">
-
-  <h1>¡Hola!<br>Me llamo Gabriel</h1>
-
-  <div class="space"></div>
-  <h3>Experiencia</h3>
-  <div class="card">
-    <div class="tools">
-      <div class="circle">
-        <span class="red box"></span>
-      </div>
-      <div class="circle">
-        <span class="yellow box"></span>
-      </div>
-      <div class="circle">
-        <span class="green box"></span>
-      </div>
-      <p>Java Script</p>
     </div>
-    <div class="card__content">
-      <p>
-        <span class="db">const</span> <span class="b">myIndexedDB</span> = <span class="ocr">{</span><br>
-        &ensp;<span class="lb">db:</span> <span class="db">undefined</span>,<br>
-        &ensp;<span class="y">startDB</span><span class="m">() {</span><br>
-        &ensp;&ensp;<span class="m">return</span> <span class="db">new</span> <span class="g">Promise</span><span class="b">(</span><span class="db">async</span> <span class="y">resolve</span> <span class="db">=></span> <span class="ocr">{</span><br>
-        &ensp;&ensp;&ensp;<span class="db">let</span> <span class="lb">request</span> = <span class="lb">window</span>.<span class="lb">indexedDB</span>.<span class="y">open</span><span class="m">(</span><span class="ma">"user"</span>, 1<span class="m">)</span>;<br>
-        &ensp;&ensp;&ensp;<span class="lb">request</span>.<span class="y">onerror</span> = <span class="db">function</span> <span class="m">() {</span><br>
-        &ensp;&ensp;&ensp;&ensp;<span class="lb">console</span>.<span class="y">error</span><span class="db">(</span><span class="ma">"No se pudo abrir la base de datos"</span><span class="db">)</span>;<br>
-        &ensp;&ensp;&ensp;<span class="m">}</span>;<br>
-        &ensp;&ensp;&ensp;<span class="lb">request</span>.<span class="y">onsuccess</span> = <span class="db">function</span> <span class="m">() {</span><br>
-        &ensp;&ensp;&ensp;&ensp;<span class="lb">console</span>.<span class="y">info</span><span class="db">(</span><span class="ma">"Base de datos abierta con éxito"</span><span class="db">)</span>;<br>
-        &ensp;&ensp;&ensp;&ensp;<span class="b">myIndexedDB</span>.<span class="lb">db</span> = <span class="lb">request</span>.<span class="b">result</span>;<br>
-        &ensp;&ensp;&ensp;&ensp;<span class="y">resolve</span><span class="db">()</span><br>
-        <br>
-        <span class="acct">[...] 100 líneas restantes</span>
-      </p>
+  </noscript>
+
+  <!-- ¡PARA! Aquí ya no borres nada -->
+
+  <header>
+    <div class="openHam" onclick="document.querySelector('nav').classList.add('active')">
+      <svg viewBox="0 0 24 24">
+        <path d="M4.5 21V9L2 11l10-8 10 8-2.5-2v12h-15Z"></path>
+        <path d="M9.5 14.5V21h5v-6.5h-5Z"></path>
+        <path d="M4.5 21h15"></path>
+      </svg>
     </div>
+    <div class="navigation">
+      <nav>
+        <ul>
+          <li>
+            Redes sociales
+            <ul>
+              <li linked="https://www.linkedin.com/in/gabriel-carro-blanco/" newtab="true">LinkedIn</li>
+              <li linked="https://github.com/gacarbla" newtab="true">GitHub</li>
+              <li linked="https://discord.com/users/643575943289634836" newtab="true">Discord</li>
+              <li linked="https://instagram.com/gacarbla" newtab="true">Instagram</li>
+              <li linked="https://twitter.com/gacarbla" newtab="true">Twitter</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="profile">
+      <button class="default discord" onclick="window.location = '/login'" style="visibility: visible;">
+        <div class="image">
+          <lord-icon src="https://cdn.lordicon.com/bhfjfgqz.json" class="icon" trigger="loop" delay="3000"
+            colors="primary:#121331" style="width:40px;height:40px"></lord-icon>
+        </div>
+        <div class="username">
+          <p>Inicia sesión</p>
+        </div>
+      </button>
+      <button class="specific discord" style="visibility: hidden;"
+        onclick="window.location = '/login/discord/#logout=true'">
+        <div class="image">
+          <img id="user_img">
+        </div>
+        <div class="username">
+          <p><span id="user_username"></span><span id="user_discriminator"></span></p>
+        </div>
+      </button>
+    </div>
+  </header>
+  <div class="start">
+    <canvas id="canvas"></canvas>
   </div>
-  <p>Autodidacta desde 2018.<br>Programando en JavaScript, TypeScript y Python. Haciendo uso de Node.js.<br>Diseñando páginas en HTML y CSS.</p>
-  <p>
-    Catto Coffee ( <a href="http://catto.gatitosworld.com" target="_blank">catto.gatitosworld.com</a> )<br>
-    Bot de Discord con más de 300 000 usuarios y presente en más de 300 servidores. Programado íntegramente en TypeScript transpilado.<br>
-    El proyecto se llevó a cabo en colaboración con <a href="https://github.com/1rainwall" target="_blank">Rain</a> y <a href="https://github.com/mateoltd" target="_blank">Mathéo</a>.
-  </p>
-  <div class="space"></div>
-  <h3>Metas</h3>
-  <p>
-    Romper con lo habitual, lograr la superación personal y contribuír en proyectos mayores me mueven a la mejoría constante de mis habilidades.
-  </p>
-</div>
+  <div class="content">
+
+    <h1>¡Hola!<br>Me llamo Gabriel,</h1>
+
+    <p>
+      soy un apasionado programador autodidacta con una gran pasión por la resolución de problemas a través de la
+      lógica. Con 18 años de edad, he estado explorando el fascinante mundo de la programación desde el 2018 y he
+      adquirido habilidades valiosas en el camino.
+    </p>
+    <p>
+      Aunque soy autodidacta, he desarrollado una habilidad especial para
+      afrontar desafíos técnicos. Mi capacidad para analizar y comprender problemas complejos me permite abordarlos con
+      una mentalidad abierta y encontrar soluciones sólidas. Además, mi pasión por aprender siempre me impulsa a
+      mantenerme actualizado en las últimas tecnologías y tendencias del mundo de la programación.
+    </p>
+    <p>
+      A lo largo de mi viaje, he adquirido experiencia en diferentes áreas. Comencé explorando el mundo del desarrollo
+      web, aprendiendo HTML en 2018 y luego expandiendo mis conocimientos con CSS en 2021. En 2022, descubrí cómo
+      utilizar JavaScript en páginas web y creé mi propio sitio web.
+    </p>
+    <div class="space"></div>
+    <div class="card">
+      <div class="tools">
+        <div class="circle">
+          <span class="red box"></span>
+        </div>
+        <div class="circle">
+          <span class="yellow box"></span>
+        </div>
+        <div class="circle">
+          <span class="green box"></span>
+        </div>
+        <p>Java Script</p>
+      </div>
+      <div class="card__content">
+        <p>
+          <span class="db">const</span> <span class="b">myIndexedDB</span> = <span class="ocr">{</span><br>
+          &ensp;<span class="lb">db:</span> <span class="db">undefined</span>,<br>
+          &ensp;<span class="y">startDB</span><span class="m">() {</span><br>
+          &ensp;&ensp;<span class="m">return</span> <span class="db">new</span> <span class="g">Promise</span><span
+            class="b">(</span><span class="db">async</span> <span class="y">resolve</span> <span class="db">=></span>
+          <span class="ocr">{</span><br>
+          &ensp;&ensp;&ensp;<span class="db">let</span> <span class="lb">request</span> = <span
+            class="lb">window</span>.<span class="lb">indexedDB</span>.<span class="y">open</span><span
+            class="m">(</span><span class="ma">"user"</span>, 1<span class="m">)</span>;<br>
+          &ensp;&ensp;&ensp;<span class="lb">request</span>.<span class="y">onerror</span> = <span
+            class="db">function</span> <span class="m">() {</span><br>
+          &ensp;&ensp;&ensp;&ensp;<span class="lb">console</span>.<span class="y">error</span><span
+            class="db">(</span><span class="ma">"No se pudo abrir la base de datos"</span><span class="db">)</span>;<br>
+          &ensp;&ensp;&ensp;<span class="m">}</span>;<br>
+          &ensp;&ensp;&ensp;<span class="lb">request</span>.<span class="y">onsuccess</span> = <span
+            class="db">function</span> <span class="m">() {</span><br>
+          &ensp;&ensp;&ensp;&ensp;<span class="lb">console</span>.<span class="y">info</span><span
+            class="db">(</span><span class="ma">"Base de datos abierta con éxito"</span><span class="db">)</span>;<br>
+          &ensp;&ensp;&ensp;&ensp;<span class="b">myIndexedDB</span>.<span class="lb">db</span> = <span
+            class="lb">request</span>.<span class="b">result</span>;<br>
+          &ensp;&ensp;&ensp;&ensp;<span class="y">resolve</span><span class="db">()</span><br>
+          <br>
+          <span class="acct">[...] 100 líneas restantes</span>
+        </p>
+      </div>
+    </div>
+    <div class="space"></div>
+    <p>
+      Uno de mis proyectos más destacados hasta ahora es el desarrollo de un bot para Discord en JavaScript utilizando
+      Node.js. Aunque tuve que apagarlo definitivamente en 2020, esta experiencia me permitió sumergirme en el mundo de
+      la programación orientada a eventos y la interacción con APIs. Trabajar en un proyecto colaborativo como <a
+        href="http://catto.gatitosworld.com" target="_blank">Catto Coffe</a>, junto a mis compañeros <a
+        href="https://github.com/1rainwall" target="_blank">Rain</a> y <a href="https://github.com/mateoltd"
+        target="_blank">Mathéo</a>, me enseñó el valor del trabajo en equipo y cómo combinar nuestras fortalezas
+      individuales para lograr un objetivo común.
+    </p>
+    <p>
+      Si bien he experimentado dificultades, estas experiencias me han enseñado a adaptarme rápidamente, a ser
+      resiliente y a buscar soluciones incluso en situaciones desafiantes. Reconozco que a veces puedo ser un poco
+      despistado, pero mis capacidades y mi entusiasmo por superar obstáculos me convierten en un valioso activo para
+      cualquier equipo de desarrollo.
+    </p>
+    <div class="space"></div>
+    <div class="card">
+      <div class="tools">
+        <div class="circle">
+          <span class="red box"></span>
+        </div>
+        <div class="circle">
+          <span class="yellow box"></span>
+        </div>
+        <div class="circle">
+          <span class="green box"></span>
+        </div>
+        <p>Type Script</p>
+      </div>
+      <div class="card__content">
+        <p>
+          <span class="acct">[...]</span><br><br>
+          <span class="m">export</span> <span class="db">const</span> <span class="y">build</span> = <span
+            class="ocr">(</span><span class="lb">actionRowBuilder</span>: <span class="g">ActionRowBuilder</span>, <span
+            class="lb">options</span>: <span class="g">optionsObject</span>, <span class="lb">data</span>: <span
+            class="g">String</span><span class="m">[]</span> | <span class="g">undefined</span><span
+            class="ocr">)</span> <span class="db">=></span> <span class="ocr">{</span><br>
+          &ensp;<span class="m">return</span> <span class="db">new</span> <span class="g">Promise</span><span
+            class="m">(</span><span class="y">resolve</span> <span class="db">=></span> <span class="b">{</span><br>
+          &ensp;&ensp;<span class="lb">actionRowBuilder</span>.<span class="y">addComponents</span><span
+            class="ocr">(</span><br>
+          &ensp;&ensp;&ensp;<span class="db">new</span> <span class="g">ButtonBuilder</span><span
+            class="m">()</span><br>
+          &ensp;&ensp;&ensp;&ensp;.<span class="y">setCustomId</span><span class="m">(</span><span
+            class="ma">`mod:noteAt_u</span><span class="db">${</span><span class="lb">options</span>.<span
+            class="lb">author</span><span class="db">}</span><span class="ma">_</span><span class="db">${</span><span
+            class="lb">data</span>?.<span class="y">join</span><span class="db">(</span><span class="ma">","</span><span
+            class="db">)}</span><span class="ma">`</span><span class="m">)</span><br>
+          &ensp;&ensp;&ensp;&ensp;.<span class="y">setEmoji</span><span class="m">(</span><span
+            class="lb">options</span>.<span class="lb">emoji</span><span class="m">)</span><br>
+          &ensp;&ensp;&ensp;&ensp;.<span class="y">setDisabled</span><span class="m">(</span><span
+            class="lb">options</span>?.<span class="lb">disabled</span><span class="m">)</span><br>
+          &ensp;&ensp;&ensp;&ensp;.<span class="y">setStyle</span><span class="m">(</span><span
+            class="g">ButtonStyle</span>.<span class="db">Secondary</span><span class="m">)</span><br>
+          &ensp;&ensp;<span class="ocr">)</span>;<br>
+          &ensp;&ensp;<span class="y">response</span><span class="ocr">(</span><span class="db">true</span><span
+            class="ocr">)</span><br>
+          &ensp;<span class="db">}</span><span class="m">)</span><br>
+          <span class="ocr">}</span>;<br>
+          <br>
+          <span class="m">export</span> <span class="db">class</span> <span class="g">ButtonHandler</span> <span
+            class="db">extends</span> <span class="g">InteractionHandler</span> <span class="ocr">{</span><br>
+          &ensp;<span class="db">public</span> <span class="db">constructor</span><span class="m">(</span><span
+            class="lb">ctx</span>: <span class="g">PieceContext</span>, <span class="lb">options</span>: <span
+            class="g">InteractionHandler</span>.<span class="g">Options</span><span class="m">)</span> <span
+            class="m">{</span><br>
+          &ensp;&ensp;<span class="db">super</span><span class="b">(</span><span class="lb">ctx</span>, <span
+            class="ocr">{</span><br>
+          &ensp;&ensp;&ensp;...<span class="lb">options</span>,<br>
+          &ensp;&ensp;&ensp;<span class="lb">interactionHandlerType:</span> <span
+            class="g">InteractionHandlerTypes</span>.<span class="b">Button</span><br>
+          &ensp;&ensp;<span class="ocr">}</span><span class="b">)</span><br>
+          &ensp;<span class="m">}</span><br>
+          <br>
+          <span class="acct">[...]</span>
+        </p>
+      </div>
+    </div>
+    <div class="space"></div>
+    <p>
+      Estoy emocionado por unirme a un equipo dinámico y enfrentar nuevos desafíos. Si buscas a alguien que pueda
+      aportar soluciones técnicas creativas, con una mentalidad abierta y una pasión innegable por la programación,
+      estaré encantado de formar parte de tu equipo.
+    </p>
+  </div>
+
+  <footer>
+    <div>
+      <h3>Navegación</h3>
+      <nav>
+        <ul class="yellow">
+          <li linked="/login" newtab="false">Iniciar sesión</li>
+        </ul>
+      </nav>
+    </div>
+    <hr>
+    <div>
+      <h3>Redes sociales</h3>
+      <nav>
+        <ul class="blue">
+          <li linked="https://www.linkedin.com/in/gabriel-carro-blanco/" newtab="true">LinkedIn</li>
+          <li linked="https://github.com/gacarbla" newtab="true">GitHub</li>
+          <li linked="https://discord.com/users/643575943289634836" newtab="true">Discord</li>
+          <li linked="https://instagram.com/gacarbla" newtab="true">Instagram</li>
+          <li linked="https://twitter.com/gacarbla" newtab="true">Twitter</li>
+        </ul>
+      </nav>
+    </div>
+    <hr>
+    <div>
+      <h3>Contacto</h3>
+      <nav>
+        <ul class="green">
+          <li linked="mailto://contact@gacarbla.es" newtab="false">contact@gacarbla.es</li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
 
 </body>
 

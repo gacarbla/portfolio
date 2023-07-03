@@ -15,3 +15,4 @@ El directorio `./login/` dispone del archivo `index.html`, que contiene las dife
 | Número | Nombre | Anotaciones |
 |:---:|:---:|---|
 |0.1|azul|No disponible para dispositivos con un ancho de pantalla inferior a 1000px|
+|0.2|cielo|No disponible para dispositivos con un ancho de pantalla inferior a 650px|

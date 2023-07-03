@@ -28,7 +28,7 @@ window.onload = function () {
   let c = init("canvas").c,
     canvas = init("canvas").canvas,
     w = (canvas.width = window.innerWidth),
-    h = (canvas.height = window.innerHeight * 0.5)
+    h = (canvas.height = Math.max(window.innerHeight/2, 300))
     if (window.innerWidth<760) {
       w = (canvas.width = window.innerWidth * 2),
       h = (canvas.height = window.innerHeight)
@@ -261,7 +261,7 @@ window.onload = function () {
 
   window.addEventListener("resize", function () {
     (w = canvas.width = window.innerWidth),
-    (h = canvas.height = window.innerHeight * 0.5)
+    (h = canvas.height = Math.max(window.innerHeight/2, 300))
     if (window.innerWidth<760) {
       w = (canvas.width = window.innerWidth * 2),
       h = (canvas.height = window.innerHeight)
