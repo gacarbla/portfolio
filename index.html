@@ -23,9 +23,10 @@
 
   <!--  Scripts  -->
   <script src="script.js"></script>
+  <script src="src/localStorage/script.js"></script>
   <script src="src/indexeddb/script.js"></script>
   <script src="src/discord/script.js"></script>
-  <script src="https://cdn.lordicon.com/bhenfmcm.js"></script> <!-- Inicia sesión avatar -->
+  <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
 
   <!--  Título  -->
   <title>gacarbla's portfolio</title>
@@ -42,10 +43,12 @@
         Tu navegador no permite el uso de scripts.
       </div>
       <div class="body">
-        Muchas de las funciones de la página no estarán disponibles, entre ellas, se encuentran la mayor parte de links, el login y las animaciones.
+        Muchas de las funciones de la página no estarán disponibles, entre ellas, se encuentran la mayor parte de links,
+        el login y las animaciones.
       </div>
       <div id="cooldown">
-        Esta ventana evitará que hagas uso de las herramientas de la página.<br>Si deseas, puedes desactivarla mediante el inspector de código.
+        Esta ventana evitará que hagas uso de las herramientas de la página.<br>Si deseas, puedes desactivarla mediante
+        el inspector de código.
       </div>
     </div>
   </noscript>
@@ -53,15 +56,15 @@
   <!-- ¡PARA! Aquí ya no borres nada -->
 
   <header>
-    <div class="openHam" onclick="document.querySelector('nav').classList.add('active')">
-      <svg viewBox="0 0 24 24">
-        <path d="M4.5 21V9L2 11l10-8 10 8-2.5-2v12h-15Z"></path>
-        <path d="M9.5 14.5V21h5v-6.5h-5Z"></path>
-        <path d="M4.5 21h15"></path>
+    <div class="openHam" onclick="document.querySelector('nav').classList.add('active')" id="openHamDiv">
+      <svg viewBox="0 0 24 24" id="openHamSvg">
+        <path d="M4.5 21V9L2 11l10-8 10 8-2.5-2v12h-15Z" id="openHamSvgPath1"></path>
+        <path d="M9.5 14.5V21h5v-6.5h-5Z" id="openHamSvgPath2"></path>
+        <path d="M4.5 21h15" id="openHamSvgPath3"></path>
       </svg>
     </div>
     <div class="navigation">
-      <nav>
+      <nav id="navigation">
         <ul>
           <li>
             Redes sociales
@@ -279,6 +282,12 @@
           <li linked="mailto://contact@gacarbla.es" newtab="false">contact@gacarbla.es</li>
         </ul>
       </nav>
+    </div>
+    <div id="moniqueque">
+      <lord-icon src="https://cdn.lordicon.com/jnlncdtk.json" trigger="loop-on-hover" delay="1000"
+        colors="primary:#646e78,secondary:#000000,tertiary:#4faef9,quaternary:#f3c3ba,quinary:#e7e2eb"
+        style="width:250px;height:250px">
+      </lord-icon>
     </div>
   </footer>
 

@@ -287,6 +287,13 @@ window.onload = function () {
   })
 };
 
+window.onclick = async function(e) {
+  let menu = document.getElementById("navigation")
+  if (window.innerWidth < 650 && menu.classList.contains("active") && !menu.contains(e.target) && !e.target.id.startsWith("openHam")) {
+    menu.classList.remove("active")
+  }
+}
+
 async function startLogin() {
   try {
     await myIndexedDB.startDB("user")

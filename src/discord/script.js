@@ -66,7 +66,7 @@ class login {
       const token = fragment.get('token_type') ? `${fragment.get('token_type')} ${fragment.get('access_token')}` : data.obtener("user_token");
 
       if (!token || token == " ") {
-        return destroyLoader()
+        return
       }
 
       console.info("Iniciando conexión con la API de Discord")

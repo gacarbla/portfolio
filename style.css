@@ -297,17 +297,17 @@ div.space {
 }
 
 footer {
+    position: relative;
     display: flex;
     flex-direction: row;
     background-color: #181818;
     height: 300px;
     align-items: center;
-    justify-content: center;
 }
 
 footer div {
-    width: 100%;
     height: 100%;
+    width: 200px;
     padding: 0px 40px;
     color: #fff;
 }
@@ -320,6 +320,8 @@ footer div h3 {
 
 footer hr {
     height: 60%;
+    margin: 0px;
+    opacity: .5;
 }
 
 footer ul {
@@ -337,6 +339,7 @@ footer li {
     cursor: pointer;
     border-radius: 10px;
     transition: all .3s;
+    max-width: 200px;
 }
 
 footer li:hover {
@@ -414,6 +417,13 @@ footer .yellow li:hover {
     width: 100%;
 }
 
+#moniqueque {
+    position: absolute;
+    right: 20px;
+    height: 250px;
+    padding: 0px;
+}
+
 @media only screen and (max-width: 1300px) {
     .card .card__content p {
         font-size: 0.85rem;
@@ -428,6 +438,15 @@ footer .yellow li:hover {
     .card .card__content p {
         width: 100%;
         white-space: nowrap;
+    }
+
+    #moniqueque {
+        position: absolute;
+        right: -30px;
+        transform: scale(.65) rotateZ(-15deg);
+        height: 250px;
+        padding: 0px;
+        bottom: -20px;
     }
 }
 
@@ -455,6 +474,45 @@ footer .yellow li:hover {
     
     body {
         margin-top: 60px;
+    }
+}
+
+@media only screen and (max-width: 870px) {
+    footer {
+        flex-direction: column;
+        background-color: #181818;
+        width: 100vw;
+        height: 100%;
+        align-items: start;
+        padding: 20px;
+    }
+    
+    footer div {
+        width: 200px;
+        height: 100%;
+        padding: 0px 40px;
+        color: #fff;
+    }
+    
+    footer div h3 {
+        padding-left: 10px;
+        text-align: start;
+        opacity: .7;
+    }
+    
+    footer hr {
+        width: 220px;
+        margin-left: 40px;
+        height: 0px;
+    }
+
+    #moniqueque {
+        position: absolute;
+        right: 0px;
+        transform: scale(1) rotateZ(-30deg);
+        height: 250px;
+        padding: 0px;
+        bottom: -50px;
     }
 }
 
@@ -494,6 +552,7 @@ footer .yellow li:hover {
 }
 
 @media only screen and (max-width: 650px) {
+
     header nav {
         position: absolute;
         z-index: 999;
